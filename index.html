@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Sigmar+One&display=swap" rel="stylesheet">
+  <script src="scripts.js" async></script>
+  <title>Matching Cats & Dogs</title>
+</head>
+<body>
+  <h1 class="page-title">Cats & Dogs</h1>
+  <h3 class="page-subtitle">It's a matching game.</h3>
+  <div class="overlay-text visible">
+    Click to Start
+  </div>
+  <div id="game-over-text" class="overlay-text">
+    Ruh-roh...GAME OVER 
+    <span class="overlay-text-small">Click to Try Again</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    Purrrfect! You win!
+    <span class="overlay-text-small">Click to Try Again</span>
+  </div>
+
+  <div class="game-container">
+    <div class="game-info-container">
+      <div class="game-info">
+        Time <span id="time-remaining">100</span>
+      </div>
+      <div class="game-info">
+        Flips <span id="flips">0</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+           <img class="card-value" src="Assets/Images/Cat1.jpg">
+       </div>
+      </div>
+
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Cat1.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        
+        <img class="card-value" src="Assets/Images/Dog1.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Dog1.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">>
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Cat2.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Cat2.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Dog2.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Dog2.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Cat3.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Cat3.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Dog3.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+           <img class="card-value" src="Assets/Images/Dog3.png">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Cat4.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Cat4.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+        <img class="card-value" src="Assets/Images/Dog4.jpg">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-back card-face">
+        <img class="rain-back" src="Assets/Images/Rain.png">
+      </div>
+      <div class="card-front card-face">
+         <img class="card-value" src="Assets/Images/Dog4.jpg">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
