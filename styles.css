@@ -82,44 +82,9 @@ html {
 }
 
 .card-back {
-  background-color: black;
-  border-color: #FF6D00;
+  background-color: rgb(64, 54, 76);
+  border-color: rgb(211, 211, 225);
   transform: rotateY(0); 
-}
-
-.cob-web {
-  position: absolute;
-  transition: width 100ms ease-in-out, height 100ms ease-in-out;
-  width: 47px;
-  height: 47px;
-}
-
-.card-face:hover .cob-web {
-  width: 52px;
-  height: 52px;
-}
-
-.cob-web-top-left {
-  transform: rotate(270deg);
-  top: 0;
-  left: 0;
-}
-
-.cob-web-top-right {
-  top: 0;
-  right: 0;
-}
-
-.cob-web-bottom-left {
-  transform: rotate(180deg);
-  bottom: 0;
-  left: 0;
-}
-
-.cob-web-bottom-right {
-  transform: rotate(90deg);
-  bottom: 0;
-  right: 0;
 }
 
 .rain-back {
@@ -148,7 +113,7 @@ html {
   transform: rotateY(180deg);
 }
 
-.overlay-text {
+.intro-text {
   top: 0;
   left: 0;
   right: 0;
@@ -164,11 +129,11 @@ html {
   transition: background-color 500ms, font-size 500ms;
 }
 
-.overlay-text-small {
+.intro-text-small {
   font-size: .3em;
 }
 
-.overlay-text.visible {
+.intro-text.visible {
   display: flex;
   animation: overlay-grow 500ms forwards;
 }
@@ -185,7 +150,7 @@ html {
   }
 }
 
-@keyframes overlay-grow {
+@keyframes intro-grow {
   from {
     background-color: rgba(0, 0, 0, 0);
     font-size: 0;
