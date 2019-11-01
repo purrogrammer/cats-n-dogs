@@ -1,5 +1,3 @@
-import { readSync } from "fs";
-
 class AudioController {
     constructor() {
         this.flipSound = new Audio('Assets/sounds/flip.wav');
@@ -26,7 +24,7 @@ class Match {
         this.cardsArray = cards;
         this.totalTime = totalTime;
         this.timeRemaining = totalTime;
-        this.timer = document.getElementById('time-remaining')
+        this.timer = document.getElementById('time-remaining');
         this.ticker = document.getElementById('flips');
         this.audioController = new AudioController();
     }
@@ -41,7 +39,7 @@ class Match {
             this.shuffleCards(this.CardsArrray);
             this.countdown = this.startCountdown();
             this.busy = false;
-         }, 500); 
+            }, 500); 
          this.hideCards();
          this.timer.innerText = this.timeRemaining;
          this.ticker.innerText = this.totalClicks; 
@@ -52,25 +50,31 @@ class Match {
             this.timer.innerText = this.timeRemaining;
             if(this.timeRemaining === 0)
                 this.gameOver(); 
-        }, 1000);
-    }
+            }, 1000);
+        }
     victory() {
         //clear scoreboard, trigger victory sound & unhide victory text
+        this.audioController.victory();
+        document.getElementById('victory-text').classList.add('visible');
     }
 
     gameOver() {
         //clear scoreboard, trigger "game over" sound effect and unhide text
-    
+        clearInterval(this.countdown);
+        this.audioController.gameOver(); 
+        document.getElementById('game-over-text').classList.add('visible');
     }
 
     hideCards() {
-        this.cardsArray.forEach(() => 
-        //remove visible and matched classes
+        this.cardsArray.forEach(card => {
+        card.classList.remove('visible'); 
+        card.classList.remove('matched');
+        });
     }
 
-    flipCard(card) {
-        //trigger audio; add clicks to scoreboard; call checkIfCardMatdch() function
-        if(this.canFlipCard(card)) {
+   //trigger audio; add clicks to scoreboard; call checkIfCardMatdch function
+     flipCard(card) {
+            if(this.canFlipCard(card)) {
             this.audioController.flip();
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
@@ -92,25 +96,36 @@ class Match {
         this.cardToCheck = null;             
     }
     cardMatch(card1, card2) {
-        //something something leading to "victory" text & sound
-
+        this.matchedCards.push(card1);
+        this.matchedCards.push(card2);
+        card1.classList.add('matched');
+        card2.classList.add('matched');
+        this.audioController.match();
+        if(this.matchedCards.lenth == this.cardsArray.length)
+         this.victory(); 
     }
 
     cardNoMatch(card1, card2) {
-        //something something "womp womp" sound and reset
-
+        this.busy = true;
+        setTimeout(() => {
+            card1.classList.remove('visible');
+            card2.classList.remove('visible');
+            this.busy = false;
+        }, 1000);
     }
 
+    //Fisher-Yates loop 
     shuffleCards() { 
-    //Fisher-Yates loop to go here
-    //will generate a 
+    for (let i = cardsArray.length -1; i > 0, i--) {
+        let randIndex = Math.floor(Math.random() * (i + 1));
+        cardsArray[randIndex].style.order = i;
+        cardsArray[i].style.order = randIndex;
+       }
     }
-
 
     // ready function to trigger text and start game
-
     funtcion ready() {
-        let blurbs= Array.from(document.getElementsByClassName('overlay-text'));
+        let blurbs= Array.from(document.getElementsByClassName('intro-text'));
         let cards = Array.from(document.getElementsByClassName('card'));
         let game = new Match(100, cards);
 
@@ -126,5 +141,4 @@ class Match {
                 game.flipCard(card);
             });
         });
-
     }
